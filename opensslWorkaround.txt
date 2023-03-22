@@ -1,0 +1,3 @@
+- if you are getting an openssl stack error, pasting this into the terminal is a workaround
+export NODE_OPTIONS=--openssl-legacy-provider
+
