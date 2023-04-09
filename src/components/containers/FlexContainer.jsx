@@ -12,7 +12,9 @@ import React from "react";
     - they have default values of css styles, but the user can input their own values
         for the css properties
     - additionalStyles will allow the user to customize the container even more,
-    pass in a object containing the styles */
+    pass in a object containing the styles 
+*/
+
 export const FlexContainer = ({
     flexOrientation="row", //prop for flex-direction
     bgColor="white", //prop for background-color
