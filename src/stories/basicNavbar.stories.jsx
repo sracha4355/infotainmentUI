@@ -10,18 +10,23 @@ export default {
 
 const NavbarTemplate = ({items,  navItemArgs, ...args}) =>{
     return(
-        <Navbar {...args}>
+        <Navbar {...args}
+            additionalStyles={{borderRadius: "1rem"}}
+        >
             <NavItem {...navItemArgs}
             >
                 <AiFillSetting/>
             </NavItem>
             <NavItem {...navItemArgs} 
             >
-                Link 2
+
+                <AiFillSetting/>
+                {/*Link 2*/}
             </NavItem>
             <NavItem {...navItemArgs}
             >
-                Link 3 with additional text
+                <AiFillSetting/>
+               {/*Link 3 with additional text*/}
             </NavItem>
         </Navbar>
     )
@@ -37,17 +42,17 @@ simpleNavbar.args = {
         {},
     ],
     navItemArgs: {
-        textColor:"black", // color of text
+        textColor:"white", // color of text
         padding:"sm", // size variant, based on string we choose a size from ../../utility/mapping.js's fontSizeValues object
-        fontSize: "sm",
-        bgColor:"white", //background color
-        focusOn: false,
-        href: "https://www.google.com/"
+        fontSize: "lg",
+        bgColor:"", //background color
+        focusOn: true,
+        href: "http://localhost:6006"
     },
     direction: "row",
-    justifyContent: "flex-start",
+    justifyContent: "space-evenly",
     alignItems: "center",
-    backgroundColor: "orange",
+    backgroundColor: "black",
 } 
 
 
