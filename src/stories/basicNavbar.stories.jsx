@@ -1,29 +1,27 @@
-import { Navbar } from '../../components/navbar/Navbar.jsx'
-import { NavItem } from '../../components/navbar/NavItem.jsx'
+import { Navbar } from '../components/navbar/Navbar.jsx'
+import { NavItem } from '../components/navbar/NavItem.jsx'
+import {AiFillSetting} from 'react-icons/ai'
 
 export default {
     'title': 'basic navbar',
     component: Navbar
+
 }
 
-const NavbarTemplate = ({items,...args}) =>{
+const NavbarTemplate = ({items,  navItemArgs, ...args}) =>{
     return(
         <Navbar {...args}>
-            <NavItem
-                size="md"
+            <NavItem {...navItemArgs}
             >
-                Link 1
+                <AiFillSetting/>
             </NavItem>
-            <NavItem
-                size="xl"
-                textColor="white"
+            <NavItem {...navItemArgs} 
             >
                 Link 2
             </NavItem>
-            <NavItem
-                size="md"
+            <NavItem {...navItemArgs}
             >
-                Link 3
+                Link 3 with additional text
             </NavItem>
         </Navbar>
     )
@@ -38,10 +36,18 @@ simpleNavbar.args = {
         {},
         {},
     ],
+    navItemArgs: {
+        textColor:"black", // color of text
+        padding:"sm", // size variant, based on string we choose a size from ../../utility/mapping.js's fontSizeValues object
+        fontSize: "sm",
+        bgColor:"white", //background color
+        focusOn: false,
+        href: "https://www.google.com/"
+    },
     direction: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    bgColor: "orange",
+    backgroundColor: "orange",
 } 
 
 
