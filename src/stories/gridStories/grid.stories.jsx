@@ -27,8 +27,7 @@ const GridTemplate = ({items, gridItemArgs, ...args}) =>{
     		<GridItem gridArea="Item3">
     			Grid Item 3
     		</GridItem>
-    		<GridItem gridArea="Item4"
-    			additionalStyles={gridFourStyles}>
+    		<GridItem gridArea="Item4">
     			Grid Item 4
     		</GridItem>
     	</Grid>
