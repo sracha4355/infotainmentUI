@@ -9,6 +9,10 @@ writing a component works fine
 */
 
 // Define a functional component named Gauge that receives props as its input
+
+/*
+The props required here are ticks, range, and highlights for proper rendering. The numbers passed to it must work with each other
+*/
 export const Gauge = 
 ({
 	width, // width of canvas the gauge will be rendered on
