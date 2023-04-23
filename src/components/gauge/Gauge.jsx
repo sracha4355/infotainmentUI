@@ -41,7 +41,7 @@ export const Gauge =
 	fill = false, // whether to fill the entire parent container with the gauge
 
 }) => {
-		
+			
 	const canvasRef = useRef(null) // create a reference to the canvas element
 	const [gaugeValue, setGaugeValue] = useState(89) // initialize the gauge value as 89 and set up a state variable to track it
 
@@ -53,12 +53,14 @@ export const Gauge =
 		canvas.height -= 4 // There is a bug on storybook where will fill is on, change to the props increases the height by 4
 		// this is a bandage solution to this 
 
+		
+
 		// Declaring gauge object, the props are passed to the options they effect
  		var radial = new RadialGauge({
 	 	    renderTo: canvas.id,
 	 	    width: canvas.width,
 	 	    height: canvas.height,
-	 	    units: 'mi/h',
+	 	    units: units,
 	 	    title: false,
 	 	    value: gaugeValue,
 	 	    minValue: range[0],
