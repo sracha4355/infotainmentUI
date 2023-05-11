@@ -50,7 +50,7 @@ export const Gauge =
 		const context = canvas.getContext("2d") // get the 2D context for the canvas element
 		canvas.width = fill ? canvas.parentElement.offsetWidth : width;	// set the width of the canvas element
 		canvas.height = fill ? canvas.parentElement.offsetHeight : height; // set the height of the canvas element
-		canvas.height -= 4 // There is a bug on storybook where will fill is on, change to the props increases the height by 4
+		//canvas.height -= 4 // There is a bug on storybook where will fill is on, change to the props increases the height by 4
 		// this is a bandage solution to this 
 
 		
@@ -104,9 +104,14 @@ export const Gauge =
 		fill
 	]);
 
-
+	const fillStyles = {
+		width: '100%',
+		height: '100%'
+	}
 	return (
-		<canvas id={'gauge-id'} ref={canvasRef} />
+		<canvas id={'gauge-id'} ref={canvasRef}
+			style={fill ? fillStyles : null}
+		 />
 	)
 }
 
