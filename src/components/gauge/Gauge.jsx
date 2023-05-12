@@ -15,6 +15,7 @@ The props required here are ticks, range, and highlights for proper rendering. T
 */
 export const Gauge = 
 ({
+	canvasId='gauge-id',
 	width, // width of canvas the gauge will be rendered on
 	height, // height of canvas the gauge will be rendered on
 	range = [0,220], // range for the possible numbers on the gauge
@@ -109,7 +110,7 @@ export const Gauge =
 		height: '100%'
 	}
 	return (
-		<canvas id={'gauge-id'} ref={canvasRef}
+		<canvas id={canvasId} ref={canvasRef}
 			style={fill ? fillStyles : null}
 		 />
 	)

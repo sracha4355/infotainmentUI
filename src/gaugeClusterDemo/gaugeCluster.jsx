@@ -6,12 +6,19 @@ import {FlexContainer} from '../components/containers/FlexContainer.jsx'
 import {Navbar} from '../components/navbar/Navbar.jsx'
 import {NavItem} from '../components/navbar/NavItem.jsx'
 import {AiFillSetting} from 'react-icons/ai'
+import {FaMusic} from 'react-icons/fa'
+import {SiGooglemaps} from 'react-icons/si'
+import {HiInformationCircle} from 'react-icons/hi'
+import {AiFillPhone} from 'react-icons/ai'
+import {RxThickArrowLeft} from 'react-icons/rx'
+import {RxThickArrowRight} from 'react-icons/rx'
 
 export const GaugeCluster = (
 
 ) => {
 	return (
 		<>
+
 			<Grid
 				gridSchema=
 				'"g1 e g2"
@@ -20,54 +27,146 @@ export const GaugeCluster = (
     			additionalStyles={
     				{
     					minHeight: '100vh',
-    					gridTemplateColumns: 'minmax(0, 1fr) minmax(1fr, 2fr ) minmax(0,1fr)',
+    					gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
     					gridTemplateRows: 'auto auto 100px',
     				}
     			}
 			>
 			<GridItem gridArea="g1"				
     			additionalStyles={{
-    				backgroundColor: 'red',}}
+    				backgroundColor: '#353935',}}
     		>
     			<div style={{
     					width: '100%',
-    					height: '100%'
+    					height: '100%',
+    					display: 'flex', 
+    					justifyContent: 'center',
+    					alignItems: 'center'
     				}}>
-    				<Gauge fill={true}/>
+    				<Gauge 
+    					fill={true}
+    					highlights={[]}
+    					outlineAroundNumbersCircle={true}
+    					colorNeedle={'#f5f5f5'}
+    					colorNeedleEnd={'#f5f5f5'}
+
+    				/>
     			</div>	
 
 			</GridItem>
 
 			<GridItem gridArea="g2"
-    			additionalStyles={{backgroundColor: 'orange'}}
+    			additionalStyles={{backgroundColor: '#353935'}}
 			>
-				
+				<div style={{
+    					width: '100%',
+    					height: '100%',
+    					display: 'flex', 
+    					justifyContent: 'center',
+    					alignItems: 'center'
+    				}}>
+    				<Gauge 
+    					canvasId={'canvas-id2'} 
+    					fill={true}
+    					highlights={[]}
+    					outlineAroundNumbersCircle={true}
+    					colorNeedle={'#f5f5f5'}
+    					colorNeedleEnd={'#f5f5f5'}
+    					units={"rpm"}
+    				/>
+    			</div>	
 			</GridItem>
 
 			<GridItem gridArea="e"			
-    			additionalStyles={{backgroundColor: 'pink'}}
+    			additionalStyles={{backgroundColor: 'tomato'}}
 			>
-				
+				<div
+					style={{
+						width: '100%',
+						height: '100%'
+					}}
+				>
+					<FlexContainer
+						flexOrientation={"row"}
+						jContent={"space-between"}
+						additionalStyles={{
+							padding: '1rem'
+						}}
+						bgColor={"#353935"}
+					>
+						<RxThickArrowLeft color={"white"} fontSize={'3rem'}/>
+						<RxThickArrowRight color={"white"} fontSize={'3rem'}/>
+					</FlexContainer>
+				</div>	
 			</GridItem>
 
 			<GridItem gridArea="i"
     			additionalStyles={{backgroundColor: 'cyan'}}
 			>
-				<Navbar
-					bgColor={"#999"}
-				>
-					<NavItem>
-						<AiFillSetting/>
-					</NavItem>
+				<div
+					style ={{
+						width: '100%',
+						height: '100%'
+					}}>
 
-					<NavItem>
-						<AiFillSetting/>
-					</NavItem>
+					<Navbar
+						backgroundColor={"#353935"}
+						additionalStyles={{
+							height:'100%'	
+						}}
+					>
+						
+						<NavItem 
+							textColor={'white'}
+							fontSize={'lg'}
+							padding={'lg'}
+							focusOn={true}
+							bgColor={"#353935"}	
+						>
+							<AiFillSetting/>
+						</NavItem>
 
-					<NavItem>
-						<AiFillSetting/>
-					</NavItem>
-				</Navbar>
+						<NavItem 
+							textColor={'white'}
+							fontSize={'lg'}
+							padding={'lg'}
+							focusOn={true}
+							bgColor={"#353935"}
+						>
+							<FaMusic/>
+						</NavItem>
+
+						<NavItem 
+							textColor={'white'}
+							fontSize={'lg'}
+							padding={'lg'}
+							focusOn={true}
+							bgColor={"#353935"}
+						>
+							< SiGooglemaps />
+						</NavItem>
+
+						<NavItem 
+							textColor={'white'}
+							fontSize={'lg'}
+							padding={'lg'}
+							focusOn={true}
+							bgColor={"#353935"}
+						>
+							<HiInformationCircle/>
+						</NavItem>
+
+						<NavItem 
+							textColor={'white'}
+							fontSize={'lg'}
+							padding={'lg'}
+							focusOn={true}
+							bgColor={"#353935"}
+						>
+							<AiFillPhone/>
+						</NavItem>
+					</Navbar>
+				</div>
 			</GridItem>
 
 			</Grid>

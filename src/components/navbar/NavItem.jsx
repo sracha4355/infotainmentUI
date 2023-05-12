@@ -1,4 +1,5 @@
 import React from "react";
+import {useState} from "react";
 import { paddingSizeValues, fontSizeValues} from '../../utility/mapping.js'
 // paddingSizeValues, fontSizeValues: these are objects which map a size (xs, sm, md, lg, xl) to a numeric value
 
@@ -7,7 +8,7 @@ export const NavItem = ({
     textColor, // color of text
     fontSize = "sm", // size variant, based on string we choose a size from ../../utility/mapping.js's fontSizeValues object  
     padding = "sm", // padding = "sm", // size variant, based on string we choose a size from ../../utility/mapping.js's paddingSizeValues object
-    bgColor, //background color
+    bgColor , //background color
     focusOn = false,
 
     additionalStyles, // pass in additionalStyles not accounted for by the component, the styles add on to the component's styles
@@ -37,10 +38,14 @@ export const NavItem = ({
         ...additionalStyles
     }    
 
+    console.log('og '+ bgColor)
     // methods which trigger an event to change the navitem's bgColor
     const whenMouseOverNavLink = (e) => e.target.style.backgroundColor = focus.backgroundColor 
-    const whenMouseLeavesNavLink = (e) => e.target.style.backgroundColor = propStyles.backgroundColor
+    const whenMouseLeavesNavLink = (e) => {
+        e.target.style.backgroundColor = bgColor
+        console.log("background color after leaving navbar "+bgColor)
 
+    }
     return ( 
         <>
             <a href={href} style={useCustomStyles ? customStyles : propStyles}
