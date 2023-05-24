@@ -12,7 +12,7 @@ import {HiInformationCircle} from 'react-icons/hi'
 import {AiFillPhone} from 'react-icons/ai'
 import {RxThickArrowLeft} from 'react-icons/rx'
 import {RxThickArrowRight} from 'react-icons/rx'
-
+import {fontSizeValues} from '../utility/mapping.js'
 export const GaugeCluster = (
 
 ) => {
@@ -83,20 +83,85 @@ export const GaugeCluster = (
 				<div
 					style={{
 						width: '100%',
-						height: '100%'
+						height: '100%',
 					}}
 				>
 					<FlexContainer
-						flexOrientation={"row"}
-						jContent={"space-between"}
+						flexOrientation={"column"}
 						additionalStyles={{
-							padding: '1rem'
+							height:'100%'
 						}}
 						bgColor={"#353935"}
+
 					>
-						<RxThickArrowLeft color={"white"} fontSize={'3rem'}/>
-						<RxThickArrowRight color={"white"} fontSize={'3rem'}/>
+						<FlexContainer
+							flexOrientation={"row"}
+							jContent={"space-between"}
+							additionalStyles={{
+								height: '40%',
+								width: '100%',
+								padding: '1rem',
+								boxSizing: 'border-box',
+								flexBasis: '0',
+								flexGrow: '2'
+							}}
+							bgColor={"#353935"}
+						>
+							<RxThickArrowLeft color={"white"} fontSize={'3rem'}/>
+							<RxThickArrowRight color={"white"} fontSize={'3rem'}/>
+						</FlexContainer>
+						<FlexContainer
+							flexOrientation={"column"}
+							jContent={"space-between"}
+							bgColor={"#353935"}
+							additionalStyles={{
+								flexBasis: '0',
+								flexGrow: '8',
+								padding: '2rem',
+								paddingTop: '4rem',
+								paddingBottom: '4rem',
+								boxSizing: 'border-box',
+								color: '#AFE1AF',
+
+							}}
+						>
+							<span
+								style={{
+									fontWeight: 'bold',
+									fontSize: fontSizeValues.md
+								}}
+							>
+							P
+							</span>
+							<span
+								style={{
+									fontWeight: 'bold',
+									fontSize: fontSizeValues.md
+								}}
+							>
+							R
+							</span>
+							<span
+								style={{
+									fontWeight: 'bold',
+									fontSize: fontSizeValues.md
+								}}
+							>
+							D
+							</span>
+
+							<span
+								style={{
+									fontWeight: 'bold',
+									fontSize: fontSizeValues.md
+								}}
+							>
+							N
+							</span>
+						</FlexContainer>
 					</FlexContainer>
+
+
 				</div>	
 			</GridItem>
 
